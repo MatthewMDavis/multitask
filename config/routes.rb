@@ -6,6 +6,10 @@ Multitask::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+match 'db/authorize', :controller => 'dropbox', :action => 'authorize',  via: [:get, :post]
+match 'db/upload', :controller => 'dropbox', :action => 'upload',  via: [:get, :post]
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
